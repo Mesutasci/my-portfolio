@@ -137,7 +137,26 @@ const myProjects = [
     {
         class: "fa-solid fa-table-list",
         title: "Todos App",
-        technologies: "HTML, CSS, Bootstrap, Fontawesome, Google Fonts, Sweetalert API, Javascript",
+        technologies: "HTML, CSS, Bootstrap, Fontawesome, Sweetalert API, Javascript",
         link: "https://mesutasci.github.io/toDos/"
     },
+    {
+        class: "fa-solid fa-table-columns",
+        title: "Layout Work",
+        technologies: "HTML, CSS, Fontawesome",
+        link: "https://mesutasci.github.io/Template-page-for-layouting//"
+    },
+    // {
+    //     class: "fa-solid fa-utensils",
+    //     title: "Restaurant Page",
+    //     technologies: "HTML, CSS, Bootstrap",
+    //     link: "https://mesutasci.github.io/restaurant/"
+    // },
+    // {
+    //     class: "fa-brands fa-facebook-square",
+    //     title: "Facebook Anmelden",
+    //     technologies: "HTML, CSS",
+    //     link: "https://mesutasci.github.io/facebook-sign-in-page/"
+    // },
 ]
+
