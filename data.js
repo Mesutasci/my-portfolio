@@ -99,3 +99,29 @@ let certificates = [
         link: "./certificates/Managing Project Risks and Changes.jpg"
     }
 ]
+
+// Skills list and their averages
+let skillsList = [
+    {
+        technology: "HTML",
+        percentage: "80%",
+        line: "line html"
+    },
+    {
+        technology: "CSS",
+        percentage: "70%",
+        line: "line css"
+    },
+
+    {
+        technology: "Bootstrap",
+        percentage: "70%",
+        line: "line bootstrap"
+    },
+
+    {
+        technology: "JavaScript",
+        percentage: "50%",
+        line: "line javascript"
+    }
+]

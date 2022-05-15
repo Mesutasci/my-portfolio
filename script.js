@@ -1,50 +1,89 @@
-// $(document).ready(function(){
-//     $(window).scroll(function(){
-//         if(scrollY > 5) {
-//             $('.navbar').addClass('.convert');
-//         } else {
-//             $('.navbar').removeClass('.convert');
-//         }
-//     })
-    // $('.menu-btn').click(function(){
-    //     $('.navbar .menu').toggleClass('.active');
-    //     $('.menut-btn i').toggleClass('.active');
-    // });
-// })
+// certificate cards
+function addCards(pCertificates) {
+    return pCertificates
+        .map((certificate, index) =>
+            `
+            <section class="card" id="${index + 1}">
+                <div class="box">
+                    <img src="${certificate.link}" alt="${certificate.alt}">
+                    <div class="text">
+                        <a href="
+                            ${certificate.link}"> ${certificate.title}
+                        </a>
+                    </div>
+                    <p>
+                        <a href="${certificate.link}">
+                            ${certificate.explanation}, ${certificate.issuer}, ${certificate.date}
+                        </a>
+                    </p>
+                </div>
+            </section>
+        `
+        ).join("");
+}
 
+// Making carousel cards dynamic with javascript
+function renderCards(pCertificates) {
+    let owlCarousel = document.querySelector('.owl-carousel');
+    owlCarousel.innerHTML = addCards(pCertificates);
+    return owlCarousel;
+}
+renderCards(certificates);
 
+function addSkill(sList) {
+    return sList
+        .map(skill => `
+            <div class="bars">
+                <div class="info">
+                    <span>${skill.technology}</span>
+                    <span>${skill.percentage}</span>
+                </div>
+                <div class="${skill.line}"></div>
+            </div>
+    `
+        ).join("")
+}
 
-$(document).ready(function(){
-    $(window).scroll(function(){
+function renderSkills(sList) {
+    let barsSection = document.getElementById("bars-section");
+    console.log(addSkill(sList))
+    barsSection.innerHTML = addSkill(sList);
+    return barsSection;
+}
+
+renderSkills(skillsList);
+
+$(document).ready(function () {
+    $(window).scroll(function () {
         // sticky navbar on scroll script
-        if(this.scrollY > 5){
+        if (this.scrollY > 5) {
             $('.navbar').addClass("sticky");
-        }else{
+        } else {
             $('.navbar').removeClass("sticky");
         }
-        
+
         // scroll-up button show/hide script
-        if(this.scrollY > 500){
+        if (this.scrollY > 500) {
             $('.scroll-up-btn').addClass("show");
-        }else{
+        } else {
             $('.scroll-up-btn').removeClass("show");
         }
     });
 
     // slide-up script
-    $('.scroll-up-btn').click(function(){
-        $('html').animate({scrollTop: 0});
+    $('.scroll-up-btn').click(function () {
+        $('html').animate({ scrollTop: 0 });
         // removing smooth scroll on slide-up button click
         $('html').css("scrollBehavior", "auto");
     });
 
-    $('.navbar .menu li a').click(function(){
+    $('.navbar .menu li a').click(function () {
         // applying again smooth scroll on menu items click
         $('html').css("scrollBehavior", "smooth");
     });
 
     // toggle menu/navbar script
-    $('.menu-btn').click(function(){
+    $('.menu-btn').click(function () {
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
     });
@@ -72,15 +111,15 @@ $(document).ready(function(){
         autoplayTimeOut: 2000,
         autoplayHoverPause: true,
         responsive: {
-            0:{
+            0: {
                 items: 1,
                 nav: false
             },
-            600:{
+            600: {
                 items: 2,
                 nav: false
             },
-            1000:{
+            1000: {
                 items: 3,
                 nav: false
             }
@@ -88,35 +127,3 @@ $(document).ready(function(){
     });
 });
 
-// certificate cards
-function addCards(pCertificates) {
-    return pCertificates
-        .map((a, index) =>
-            `
-            <section class="card" id="${index + 1}">
-                <div class="box">
-                    <img src="${a.link}" alt="${a.alt}">
-                    <div class="text">
-                        <a href="
-                            ${a.link}"> ${a.title}
-                        </a>
-                    </div>
-                    <p>
-                        <a href="${a.link}">
-                            ${a.explanation}, ${a.issuer}, ${a.date}
-                        </a>
-                    </p>
-                </div>
-            </section>
-        `
-        ).join("");
-}
-
-// Making carousel cards dynamic with javascript
-function render (pCertificates) {
-    let owlCarousel = document.querySelector('.owl-carousel');
-    owlCarousel.innerHTML = addCards(pCertificates);
-    return owlCarousel;
-}
-
-render(certificates);
