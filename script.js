@@ -1,4 +1,4 @@
-// certificate cards
+// Certificate Cards with JS
 function addCards(pCertificates) {
     return pCertificates
         .map((certificate, index) =>
@@ -8,11 +8,11 @@ function addCards(pCertificates) {
                     <img src="${certificate.link}" alt="${certificate.alt}">
                     <div class="text">
                         <a href="
-                            ${certificate.link}"> ${certificate.title}
+                            ${certificate.link}" target="_blank"> ${certificate.title}
                         </a>
                     </div>
                     <p>
-                        <a href="${certificate.link}">
+                        <a href="${certificate.link}" target="_blank">
                             ${certificate.explanation}, ${certificate.issuer}, ${certificate.date}
                         </a>
                     </p>
@@ -22,7 +22,6 @@ function addCards(pCertificates) {
         ).join("");
 }
 
-// Making carousel cards dynamic with javascript
 function renderCards(pCertificates) {
     let owlCarousel = document.querySelector('.owl-carousel');
     owlCarousel.innerHTML = addCards(pCertificates);
@@ -30,6 +29,8 @@ function renderCards(pCertificates) {
 }
 renderCards(certificates);
 
+
+// Skills Cards with JS
 function addSkill(sList) {
     return sList
         .map(skill => `
@@ -46,12 +47,41 @@ function addSkill(sList) {
 
 function renderSkills(sList) {
     let barsSection = document.getElementById("bars-section");
-    console.log(addSkill(sList))
     barsSection.innerHTML = addSkill(sList);
     return barsSection;
 }
-
 renderSkills(skillsList);
+
+
+//  Project Cards with JS
+function addProject(pList) {
+    return pList
+        .map(project => `
+            <div class="card">
+                <div class="box">
+                    <i class="${project.class}"></i>
+                    <h3 class="text">${project.title}</h3>
+                    <p>Technologies: <br>${project.technologies}</p><br>
+                    <p><a href="${project.link}" target="_blank">Page Link...</a></p>
+                </div>
+            </div>
+    `).join("");
+}
+
+function renderProjects(pList) {
+    let projectSection = document.querySelector(".serv-content");
+    projectSection.innerHTML = addProject(pList);
+    return projectSection;
+}
+
+renderProjects(myProjects);
+
+
+
+
+
+
+
 
 $(document).ready(function () {
     $(window).scroll(function () {

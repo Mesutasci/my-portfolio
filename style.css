@@ -475,7 +475,7 @@ section .title::after{
 }
 .projects .serv-content .card{
     width: calc(33% - 20px);
-    background: #222;
+    background: rgb(58, 58, 58);
     text-align: center;
     border-radius: 6px;
     padding: 50px 25px;
@@ -503,6 +503,16 @@ section .title::after{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
+}
+
+.projects .serv-content .card a{
+    text-decoration: none;
+    color: #00A0FB;
+
+
+}.projects .serv-content .card:hover a{
+    border-color: #fff;
+    color: #fff;
 }
 
 /* contact section styling */
@@ -561,7 +571,7 @@ section .title::after{
 .contact .right form .textarea textarea{
     height: 100%;
     width: 100%;
-    /* border: 1px solid lightgrey; */
+    border: 1px solid lightgrey;
     border-radius: 6px;
     outline: none;
     padding: 0 15px;

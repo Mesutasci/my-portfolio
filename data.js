@@ -125,3 +125,19 @@ let skillsList = [
         line: "line javascript"
     }
 ]
+
+// List of My Projects
+const myProjects = [
+    {
+        class: "fa-solid fa-user-tie",
+        title: "Portfolio Page",
+        technologies: "HTML, CSS, Fontawesome, Javascript, Jquery, OwlCarousel",
+        link: "https://mesutasci.github.io/my-portfolio/"
+    },
+    {
+        class: "fa-solid fa-table-list",
+        title: "Todos App",
+        technologies: "HTML, CSS, Bootstrap, Fontawesome, Google Fonts, Sweetalert API, Javascript",
+        link: "https://mesutasci.github.io/toDos/"
+    },
+]
